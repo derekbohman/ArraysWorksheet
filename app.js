@@ -123,8 +123,8 @@ console.log("Mexican Foods: ", mexicanFood);
 //Filter
 
 function problemOne() {
-  let results = dishes.filter(function (el) {
-    if (el.cuisine === "Vegetarian") {
+  let results = dishes.filter(function (dish) {
+    if (dish.cuisine === "Vegetarian") {
       return true;
     } else {
       return false;
@@ -140,8 +140,8 @@ console.log("Vegetarian Food: ", vegetarianFood);
 //Filter
 
 function problemTwo() {
-  let results = dishes.filter(function (el) {
-    if (el.cuisine === "Italian" && el.servings > 5) {
+  let results = dishes.filter(function (dish) {
+    if (dish.cuisine === "Italian" && dish.servings > 5) {
       return true;
     } else {
       return false;
@@ -157,8 +157,8 @@ console.log("Problem Two Answer: ", problemTwoResults);
 //Filter
 
 function problemThree() {
-  let results = dishes.filter(function (el) {
-    if (el.id === el.servings) {
+  let results = dishes.filter(function (dish) {
+    if (dish.id === dish.servings) {
       return true;
     } else {
       return false;
@@ -174,8 +174,8 @@ console.log("Problem Three Answer: ", problemThreeResults);
 //Filter
 
 function problemFour() {
-  let results = dishes.filter(function (el) {
-    if (el.servings % 2 === 0) {
+  let results = dishes.filter(function (dish) {
+    if (dish.servings % 2 === 0) {
       return true;
     } else {
       return false;
@@ -192,8 +192,8 @@ console.log("Problem Four Answer ", problemFourResults);
 //Filter
 
 function problemFive() {
-  let results = dishes.filter(function (el) {
-    if (el.ingredients.includes("chickpea")) {
+  let results = dishes.filter(function (dish) {
+    if (dish.ingredients.includes("chickpea")) {
       return true;
     } else {
       return false;
@@ -209,8 +209,8 @@ console.log("Problem Five Answer: ", problemFiveResults);
 //Map
 
 function problemSixA() {
-  let results = dishes.map(function (el) {
-    return el.cuisine;
+  let results = dishes.map(function (dish) {
+    return dish.cuisine;
   });
   return results;
 }
@@ -221,22 +221,22 @@ console.log("Problem Six A Answer: ", problemSixAResults);
 // BONUS: (come back to this after finishing all)
 //6b. Use the filter method to eliminate duplicates, leaving only distinct values in the array
 
-function problemSixB() {
-  let results = dishes.map(function (el) {
-    return el.cuisine;
+function bonusProblemSixB() {
+  let results = dishes.map(function (dish) {
+    return dish.cuisine;
   });
-  return results.filter((el, index) => results.indexOf(el) === index);
+  return results.filter((dish, index) => results.indexOf(dish) === index);
 }
 
-let problemSixBResults = problemSixB();
-console.log("Problem Six B Answer: ", problemSixBResults);
+let bonusProblemSixBResults = bonusProblemSixB();
+console.log(" Bonus Problem Six B Answer: ", bonusProblemSixBResults);
 
 //7. Create a function that will append the cuisine type to the start of the dish's name. Ie, "Italian Pizza"
 //Map
 
 function problemSeven() {
-  let results = dishes.map(function (el) {
-    return el.cuisine + " ".concat(el.name);
+  let results = dishes.map(function (dish) {
+    return dish.cuisine + " ".concat(dish.name);
   });
   return results;
 }
@@ -249,15 +249,15 @@ console.log("Problem Seven Answer: ", problemSevenResults);
 
 function problemEight() {
   let results = dishes
-    .filter(function (el) {
-      if (el.cuisine === "Vegetarian") {
+    .filter(function (dish) {
+      if (dish.cuisine === "Vegetarian") {
         return true;
       } else {
         return false;
       }
     })
-    .map(function (el) {
-      return el.cuisine + " ".concat(el.name);
+    .map(function (dish) {
+      return dish.cuisine + " ".concat(dish.name);
     });
   return results;
 }
