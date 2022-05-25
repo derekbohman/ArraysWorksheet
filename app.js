@@ -272,9 +272,9 @@ console.log("Problem Eight Answer: ", problemEightResults);
 //Filter
 
 function bonusProblemFive() {
-  let results = dishes.filter(function (el) {
+  let results = dishes.filter(function (dish) {
     if (
-      el.ingredients.includes("tomato" || el.ingredients.includes("cheese"))
+      dish.ingredients.includes("tomato" || dish.ingredients.includes("cheese"))
     ) {
       return true;
     } else {
@@ -289,5 +289,21 @@ console.log("Bonus Problem Five Answer: ", bonusProblemFiveResults);
 
 //10. Create a function that will return the total serving count of all dishes.
 //Must use Reduce, not a loop.
+
+function bonusProblemTen() {
+  let initialServings = 0;
+  let results = dishes
+    .map(function (dish) {
+      return dish.servings;
+    })
+    .reduce(
+      (previousServings, currentServings) => previousServings + currentServings,
+      initialServings
+    );
+  return results;
+}
+
+let bonusProblemTenResults = bonusProblemTen();
+console.log("Bonus Problem Ten Answer: ", bonusProblemTenResults);
 
 //11. Create a function that will return an array of any objects that do not share a cuisine type with any other objects.
