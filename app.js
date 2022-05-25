@@ -208,18 +208,28 @@ console.log("Problem Five Answer: ", problemFiveResults);
 //6a. Create a function that will return an array of only the names of the cuisine types. Ie ['Italian', 'Mexican', ...]
 //Map
 
-function problemSix() {
+function problemSixA() {
   let results = dishes.map(function (el) {
     return el.cuisine;
   });
   return results;
 }
 
-let problemSixResults = problemSix();
-console.log("Problem Six Answer: ", problemSixResults);
+let problemSixAResults = problemSixA();
+console.log("Problem Six A Answer: ", problemSixAResults);
 
 // BONUS: (come back to this after finishing all)
 //6b. Use the filter method to eliminate duplicates, leaving only distinct values in the array
+
+function problemSixB() {
+  let results = dishes.map(function (el) {
+    return el.cuisine;
+  });
+  return results.filter((el, index) => results.indexOf(el) === index);
+}
+
+let problemSixBResults = problemSixB();
+console.log("Problem Six B Answer: ", problemSixBResults);
 
 //7. Create a function that will append the cuisine type to the start of the dish's name. Ie, "Italian Pizza"
 //Map
@@ -260,6 +270,8 @@ console.log("Problem Eight Answer: ", problemEightResults);
 //5. Create a function that will return dishes whose ingredients array INCLUDES "tomato" OR "cheese".
 //Hint: You do not want to check the array's indexes to find out what the array INCLUDES.
 //Filter
+
+
 
 //10. Create a function that will return the total serving count of all dishes.
 //Must use Reduce, not a loop.
